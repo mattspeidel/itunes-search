@@ -9,11 +9,13 @@ const searchBox = document.querySelector('#searchBox')
 
 function displayResults (key) {
     const resultsDiv = document.createElement('div')
+    resultsDiv.classList.add('individualResult')
     resultsDiv.innerHTML = `
-        <img src="${key.artworkUrl100}">
-        <a id="eachResult" href="${key.previewUrl}">${key.trackName}</a>
+        <img class='coverArt' src="${key.artworkUrl100}">
+        <br>
+        <em>${key.trackName}</em>
         <h3>${key.artistName}</h3>
-        <button id='resultButton' data-url="${key.previewUrl}">Play Sample</button>
+        <button id='resultButton' class='buttons' data-url="${key.previewUrl}">Play Sample</button>
     `
     return resultsDiv
 }

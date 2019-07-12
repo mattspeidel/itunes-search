@@ -9,18 +9,24 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <h1>Fantastically Phenomenal Music Site</h1>
-    <div id='songClip'>
-        <audio controls id="songPlayer" src=""></audio>
+    <div class='headerWrapper'>
+        <h1 class='header'>Fantastically Phenomenal Music Site</h1>
+        <br>
+        <div id='songClip' class='stylePlayer'>
+            <audio controls id="songPlayer" src=""></audio>
+        </div>
+        <br>
+        <div id='searchBox'>
+            <input type="text" id="searchInput">
+            <button id="searchButton" class='buttons'>Search</button>
+            <p id='songNowPlaying'>Click a Play Sample button to hear a clip</p>
+        </div>
     </div>
-    <div id='searchBox'>
-        <input type="text" id="searchInput">
-        <button id="searchButton">Search</button>
-        <p id='songNowPlaying'>Click a Play Sample button to hear a clip</p>
+    <div class="searchArea">
+        <h2>Search Results:</h2>
+            <ul id='searchResults'>
+                
+            </ul>
     </div>
-    <h2>Search Results:</h2>
-        <ul id='searchResults'>
-            
-        </ul>
 </body>
 </html>
