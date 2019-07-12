@@ -3,6 +3,7 @@ let searchTerm
 let cleanSearch
 
 const songPlayer = document.querySelector('#songPlayer')
+let el = document.querySelector('#songNowPlaying')
 
 const searchButton = document.querySelector('#searchButton')
 const searchBox = document.querySelector('#searchBox')
@@ -15,7 +16,7 @@ function displayResults (key) {
         <br>
         <em>${key.trackName}</em>
         <h3>${key.artistName}</h3>
-        <button id='resultButton' class='buttons' data-url="${key.previewUrl}">Play Sample</button>
+        <button id='resultButton' class='buttons' data-url="${key.previewUrl}" data-track="${key.trackName}" data-artist="${key.artistName}">Play Sample</button>
     `
     return resultsDiv
 }
@@ -40,6 +41,11 @@ searchButton.addEventListener('click', function () {
 document.querySelector('#searchResults').addEventListener('click', function (event) {
     if (event.target && event.target.matches('#resultButton')) {
         songPlayer.src = event.target.dataset['url']
-        songPlayer.autoplay = true
+        songPlayer.autoplay = true      
+        var newEl = document.createElement('p');
+        var trackName = event.target.dataset['track']
+        var artistName = event.target.dataset['artist']
+        newEl.innerHTML = `<strong>Now playing:</strong>${trackName} by ${artistName}`
+        el.parentNode.replaceChild(newEl, el);
     }
 })
