@@ -16,7 +16,7 @@ function displayResults (key) {
         <br>
         <em>${key.trackName}</em>
         <h3>${key.artistName}</h3>
-        <button id='resultButton' class='buttons' data-url="${key.previewUrl}" data-track="${key.trackName}" data-artist="${key.artistName}">Play Sample</button>
+        <button id='resultButton' class='buttons' type='button' data-url="${key.previewUrl}" data-track="${key.trackName}" data-artist="${key.artistName}">Play Sample</button>
     `
     return resultsDiv
 }
@@ -37,6 +37,12 @@ searchButton.addEventListener('click', function () {
             }
         })
 })
+
+document.querySelector("#searchInput").addEventListener("keyup", event => {
+    if(event.key !== "Enter") return;
+    document.querySelector("#searchButton").click()
+    event.preventDefault()
+});
 
 document.querySelector('#searchResults').addEventListener('click', function (event) {
     if (event.target && event.target.matches('#resultButton')) {
