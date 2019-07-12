@@ -3,7 +3,7 @@ let searchTerm
 let cleanSearch
 
 const songPlayer = document.querySelector('#songPlayer')
-let el = document.querySelector('#songNowPlaying')
+let el = document.querySelector('.songNowPlaying')
 
 const searchButton = document.querySelector('#searchButton')
 const searchBox = document.querySelector('#searchBox')
@@ -48,10 +48,12 @@ document.querySelector('#searchResults').addEventListener('click', function (eve
     if (event.target && event.target.matches('#resultButton')) {
         songPlayer.src = event.target.dataset['url']
         songPlayer.autoplay = true      
-        var newEl = document.createElement('p');
+        var newEl = document.createElement('p')
+        newEl.classList.add('songNowPlaying')
         var trackName = event.target.dataset['track']
         var artistName = event.target.dataset['artist']
         newEl.innerHTML = `<strong>Now playing:</strong>${trackName} by ${artistName}`
-        el.parentNode.replaceChild(newEl, el);
+        el.parentNode.replaceChild(newEl, el)
+        el = document.querySelector('.songNowPlaying')
     }
 })
