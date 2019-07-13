@@ -6,6 +6,89 @@ html {
     font-family: 'Helvetica', Arial, Sans-serif;
     margin: 0;
 }
+.headerWrapper {
+    top:0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 0;
+    position: fixed;
+    opacity: 0.9;
+    text-align: center;
+}
+#searchTerm {
+	display: block;
+    font-size: 1rem;
+    background-color: white;
+    margin: 0 auto;
+}
+body {
+    background-image: url('turntable.jpg');
+    background-size: 400%;
+    background-attachment: fixed;
+}
+#searchInput {
+    border: 2px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 5px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+}
+.buttons {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 18px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #000000;
+}
+.buttons:active {
+	position:relative;
+	top:1px;
+}
+.individualResult {
+    text-align: center;
+    width:100%;
+}
+.coverArt {
+    max-width: 200px;
+    width: 200px;
+}
+.searchArea {
+    margin-top: 225px;
+    padding: 5px;
+    padding-right: 50px;
+}
+
+@media screen and (min-width: 990px) {
+
 body {
     background-image: url('turntable.jpg');
     background-size: 100%;
@@ -121,4 +204,5 @@ body {
     margin: 0;
     height: 25px;
     margin-top: 15px;
+}
 }
