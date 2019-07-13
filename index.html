@@ -11,7 +11,11 @@
 <body>
     <div class='headerWrapper'>
         <img class='header' src='MusicSite.png'>
-        <br>
+        <select id='searchTerm'>
+            <option value='&entity=musicTrack&attribute=artistTerm'>Artist</option>
+            <option value='&entity=musicTrack&attribute=songTerm'>Song Title</option>
+            <option value='&entity=musicTrack&attribute=albumTerm'>Album Title</option>
+        </select>
         <div id='songClip' class='stylePlayer'>
             <audio controls id="songPlayer" src=""></audio>
         </div>

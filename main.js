@@ -2,6 +2,7 @@ let results
 let searchTerm
 let cleanSearch
 
+let searchAttr = document.querySelector('#searchTerm')
 const songPlayer = document.querySelector('#songPlayer')
 let el = document.querySelector('.songNowPlaying')
 
@@ -26,7 +27,7 @@ searchButton.addEventListener('click', function () {
     searchTerm = searchBox.querySelector('input').value
     cleanSearch = encodeURIComponent(searchTerm)
     results = document.querySelector('#searchResults')
-    fetch(`https://itunes-api-proxy.glitch.me/search?term=${cleanSearch}&limit=25&media=music`)
+    fetch(`https://itunes-api-proxy.glitch.me/search?term=${cleanSearch}&limit=25&media=music${searchAttr.value}`)
         .then(function (response) {
             return response.json()
     })
@@ -52,7 +53,7 @@ document.querySelector('#searchResults').addEventListener('click', function (eve
         newEl.classList.add('songNowPlaying')
         var trackName = event.target.dataset['track']
         var artistName = event.target.dataset['artist']
-        newEl.innerHTML = `<strong>Now playing:</strong>${trackName} by ${artistName}`
+        newEl.innerHTML = `<strong>Now playing: </strong>${trackName} by ${artistName}`
         el.parentNode.replaceChild(newEl, el)
         el = document.querySelector('.songNowPlaying')
     }
