@@ -5,34 +5,26 @@ html {
     box-sizing: inherit;
     font-family: 'Helvetica', Arial, Sans-serif;
     margin: 0;
-    padding: 5px;
 }
 body {
-    background-color: lightcyan;
+    background-image: url('turntable.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
 }
 .header {
-    width:100%;
-    text-align: center;
-    font-size: 3rem;
-}
-.stylePlayer {
-    width:100%;
-    text-align: center;
-}
-#searchBox {
-    width:100%;
-    text-align: center;   
+    font-size: 1rem;
 }
 #songPlayer {
-    -webkit-transform: scale(1.25);
-    transform: scale(1.25);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transition:all 0.5s linear;
     -moz-transition:all 0.5s linear;
     -o-transition:all 0.5s linear;
     transition:all 0.5s linear;
+    padding-top: 5px;
 }
 #searchInput {
-    border: 5px solid white; 
+    border: 2px solid white; 
     -webkit-box-shadow: 
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
@@ -42,10 +34,9 @@ body {
     box-shadow: 
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
-    padding: 15px;
+    padding: 5px;
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
-    width: 350px;
     font-size: 1rem;
 }
 .buttons {
@@ -101,16 +92,24 @@ body {
     width: 200px;
 }
 .headerWrapper {
+    top:0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0;
     position: fixed;
-    top: 0;
-    width: 95%;
-    background-image: url('mixer.jpg');
-    background-size: 100%;
-    color: #ffffff;
-    text-align: center;
-    margin-left: 20px;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 .searchArea {
-    margin-top: 275px;
+    margin-top: 55px;
+    padding: 5px;
+}
+.songNowPlaying {
+    width: 400px;
+    padding-top: 20px;
+}
+#searchBox {
+    padding-top: 7px;
 }
